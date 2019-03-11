@@ -16,6 +16,7 @@ export default {
     CalendarEntry
   }
 }
+
 </script>
 
 <style lang="scss">
