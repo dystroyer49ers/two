@@ -9,9 +9,20 @@
 </template>
 
 <script>
+import { store } from '../store.js';
+import CalendarEvent from './CalendarEvent.vue';
+
 export default {
-    name: "CalendarDay",
-    props: ["day"]
+  name: "CalendarDay",
+  props: ["day"],
+  methods: {
+    setActiveDay (dayId) {
+      store.setActiveDay(dayId);
+    }
+  },
+  components: {
+    CalendarEvent
+  }
 };
 </script>
 
@@ -44,29 +55,6 @@ export default {
 
   &:last-child {
     border-right: 1px solid #8F8F8F;
-  }
-
-  .day-event {
-    margin-top: 6px;
-    margin-bottom: 6px;
-    display: block;
-    color: #4C4C4C;
-    padding: 5px;
-
-    .details {
-      display: block;
-    }
-
-    input {
-      background: none;
-      border: 0;
-      border-bottom: 1px solid #FFF;
-      width: 100%;
-
-      &:focus {
-        outline: none;
-      }
-    }
   }
 }
 </style>

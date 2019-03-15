@@ -1,14 +1,13 @@
 {
   "name": "two",
+  "description": "Callendar app", 
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "author": "Zachary Koyama",
+  "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
-  "author": "Zachary Koyama",
-  "license": "ISC",
   "dependencies": {
     "vue": "^2.6.8"
   },
