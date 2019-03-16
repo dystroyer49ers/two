@@ -1,19 +1,19 @@
 <template>
-	<div id="calender-entery">
-    <!-- Markup for the calender entery -->
-    <div class="calendar-entry-note">  
+  <div id="calendar-entry">
+    <div class="calendar-entry-note">
       <input type="text" placeholder="New Event" v-model="inputEntry" required />
       <p class="calendar-entry-day">
         Day of event: <span class="bold">{{ titleOfActiveDay }}</span>
       </p>
-      <a class="button is-primary is-small is-outlined" @click="submitEvent(inputEntry)">
+      <a class="button is-primary is-small is-outlined"
+        @click="submitEvent(inputEntry)">
         Submit
       </a>
-    </div> 
-    <p style="color: red; font-size: 13px;" v-if="error">
-      You must type something first! 
+    </div>
+    <p style="color: red; font-size: 13px" v-if="error">
+      You must type something first!
     </p>
-	</div> 
+  </div>
 </template>
 
 <script>
@@ -30,20 +30,19 @@ export default {
   computed: {
     titleOfActiveDay () {
       return store.getActiveDay().fullTitle;
-    } 
+    }
   },
   methods: {
     submitEvent (eventDetails) {
       if (eventDetails === '') return this.error = true;
 
-      store.submimtEvent(eventDetails);
+      store.submitEvent(eventDetails);
       this.inputEntry = '';
       this.error = false;
     }
-  }  
+  }
 }
 </script>
-
 
 <style lang="scss" scoped>
 #calendar-entry {
